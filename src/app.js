@@ -8,11 +8,11 @@ const pLimit = require('p-limit');
 require('dotenv').config();
 
 const config = {
-    port: process.env.PORT,
+    port: process.env.PORT || 3000,
     hyperliquidApiUrl: process.env.HYPERLIQUID_API_URL,
     hypurrscanApiUrl: process.env.HYPURRSCAN_API_URL,
     corsOrigin: process.env.CORS_ORIGIN,
-    pollingInterval: parseInt(process.env.POLLING_INTERVAL, 10)
+    pollingInterval: parseInt(process.env.POLLING_INTERVAL, 10) || 60000
 };
 
 const limit = pLimit(5);
