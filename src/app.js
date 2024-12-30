@@ -142,9 +142,12 @@ if (!fs.existsSync(dataDir)) {
 
 app.get('/api/tokens', async (req, res) => {
     try {
+        console.log('Fetching token data from database...');
         const data = await db.collection('allTokens').find({}).toArray();
+        console.log('Token data fetched successfully:', data);
         res.json(data);
     } catch (error) {
+        console.error('Error reading token data:', error);
         res.status(500).json({ error: 'Error reading token data' });
     }
 });
