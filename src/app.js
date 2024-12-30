@@ -81,7 +81,7 @@ async function updateTokenData() {
         let hasChanges = false;
 
         for (const token of spotTokens) {
-            const existingToken = currentData.find(t => t.tokenId === token.tokenId);
+            const existingToken = currentData.find(t => t.tokenIndex === token.index);
 
             try {
                 const details = await getTokenDetails(token.tokenId);
@@ -124,7 +124,7 @@ async function updateTokenData() {
                     hasChanges = true;
                 } else {
                     const updateResult = await db.collection('allTokens').findOneAndUpdate(
-                        { tokenId: token.tokenId },
+                        { tokenIndex: token.index },
                         { $set: tokenData },
                         { returnDocument: 'after' }
                     );
@@ -218,12 +218,17 @@ app.get('/api/tokens', async (req, res) => {
     }
 });
 
-app.put('/api/tokens/:tokenId', async (req, res) => {
+app.put('/api/tokens/:tokenIndex', async (req, res) => {
     try {
-        const tokenId = req.params.tokenId;
+        const tokenIndex = parseInt(req.params.tokenIndex, 10);
+
+        if (isNaN(tokenIndex)) {
+            return res.status(400).json({ error: 'Invalid token index' });
+        }
+
         const updates = req.body;
 
-        console.log('Attempting to update token with tokenId:', tokenId);
+        console.log('Attempting to update token with tokenIndex:', tokenIndex);
         console.log('Update payload:', updates);
 
         if (!db) {
@@ -232,16 +237,16 @@ app.put('/api/tokens/:tokenId', async (req, res) => {
         }
 
         // Vérifier si le token existe
-        const existingToken = await db.collection('allTokens').findOne({ tokenId: tokenId });
+        const existingToken = await db.collection('allTokens').findOne({ tokenIndex: tokenIndex });
         
         if (!existingToken) {
-            console.log('Token not found with tokenId:', tokenId);
+            console.log('Token not found with tokenIndex:', tokenIndex);
             return res.status(404).json({ error: 'Token not found' });
         }
 
         // Mise à jour du document
         const result = await db.collection('allTokens').findOneAndUpdate(
-            { tokenId: tokenId },
+            { tokenIndex: tokenIndex },
             { $set: { 
                 ...updates,
                 lastUpdated: new Date().toISOString()
