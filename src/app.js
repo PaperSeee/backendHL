@@ -6,6 +6,7 @@ const fs = require('fs');
 const path = require('path');
 const pLimit = require('p-limit');
 require('dotenv').config();
+const { MongoClient } = require('mongodb');
 
 const config = {
     port: process.env.PORT || 3000,
@@ -14,6 +15,16 @@ const config = {
     corsOrigin: process.env.CORS_ORIGIN,
     pollingInterval: parseInt(process.env.POLLING_INTERVAL, 10) || 60000
 };
+
+const client = new MongoClient(process.env.MONGO_URI);
+let db;
+
+client.connect().then(() => {
+    db = client.db('backendHL');
+    console.log('Connected to MongoDB');
+}).catch(err => {
+    console.error('Error connecting to MongoDB:', err);
+});
 
 const limit = pLimit(5);
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -66,21 +77,18 @@ const getTokenDetails = (tokenId) => makeRateLimitedRequest(async () => {
 }, 20);
 
 async function updateTokenData() {
-    const filePath = path.join(__dirname, 'data/allTokens.json');
-    const startPxPath = path.join(__dirname, 'data/startPx.json');
-
     try {
-        const currentData = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-        const startPxData = JSON.parse(fs.readFileSync(startPxPath, 'utf8'));
+        const currentData = await db.collection('allTokens').find({}).toArray();
+        const startPxData = await db.collection('startPx').find({}).toArray();
         const [spotTokens, deploys] = await Promise.all([getSpotMeta(), getAllDeploys()]);
         let hasChanges = false;
 
         for (const token of spotTokens) {
-            const existingToken = currentData.tokens.find(t => t.tokenId === token.tokenId);
+            const existingToken = currentData.find(t => t.tokenId === token.tokenId);
 
             try {
                 const details = await getTokenDetails(token.tokenId);
-                const startPxEntry = startPxData.tokens.find(t => t.index === token.index);
+                const startPxEntry = startPxData.find(t => t.index === token.index);
                 const startPx = startPxEntry?.startPx || null;
 
                 const tokenData = {
@@ -99,10 +107,10 @@ async function updateTokenData() {
 
                 if (!existingToken) {
                     console.log(`New token found: ${token.name}`);
-                    currentData.tokens.push(tokenData);
+                    await db.collection('allTokens').insertOne(tokenData);
                     hasChanges = true;
                 } else {
-                    existingToken.markPx = details.markPx || existingToken.markPx;
+                    await db.collection('allTokens').updateOne({ tokenId: token.tokenId }, { $set: tokenData });
                     hasChanges = true;
                 }
             } catch (error) {
@@ -111,7 +119,6 @@ async function updateTokenData() {
         }
 
         if (hasChanges) {
-            fs.writeFileSync(filePath, JSON.stringify(currentData, null, 2));
             console.log('Token data updated:', new Date().toISOString());
         }
     } catch (error) {
@@ -128,36 +135,28 @@ if (!fs.existsSync(dataDir)) {
     fs.mkdirSync(dataDir);
 }
 
-app.get('/api/tokens', (req, res) => {
+app.get('/api/tokens', async (req, res) => {
     try {
-        const data = fs.readFileSync(path.join(__dirname, 'data/allTokens.json'), 'utf8');
-        res.json(JSON.parse(data));
+        const data = await db.collection('allTokens').find({}).toArray();
+        res.json(data);
     } catch (error) {
         res.status(500).json({ error: 'Error reading token data' });
     }
 });
 
-app.put('/api/tokens/:index', (req, res) => {
+app.put('/api/tokens/:index', async (req, res) => {
     try {
-        const filePath = path.join(__dirname, 'data/allTokens.json');
         const tokenIndex = parseInt(req.params.index, 10);
         const updates = req.body;
-        const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
 
-        const tokenArrayIndex = data.tokens.findIndex(t => t.index === tokenIndex);
+        const result = await db.collection('allTokens').updateOne({ index: tokenIndex }, { $set: updates });
 
-        if (tokenArrayIndex === -1) {
+        if (result.matchedCount === 0) {
             return res.status(404).json({ error: 'Token not found' });
         }
 
-        Object.keys(updates).forEach(field => {
-            if (!['tokenId', 'name', 'index'].includes(field)) {
-                data.tokens[tokenArrayIndex][field] = updates[field];
-            }
-        });
-
-        fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
-        res.json({ message: 'Token updated successfully', token: data.tokens[tokenArrayIndex] });
+        const updatedToken = await db.collection('allTokens').findOne({ index: tokenIndex });
+        res.json({ message: 'Token updated successfully', token: updatedToken });
 
     } catch (error) {
         res.status(500).json({ error: 'Error updating token data' });

@@ -16,8 +16,11 @@
         "cors": "^2.8.5",
         "dotenv": "^16.4.7",
         "express": "^4.21.2",
+        "ioredis": "^5.4.2",
+        "mongodb": "^6.12.0",
         "node-cron": "^3.0.3",
-        "p-limit": "^3.1.0"
+        "p-limit": "^3.1.0",
+        "redis": "^4.7.0"
     },
     "devDependencies": {
         "jest": "^29.7.0",
