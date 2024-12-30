@@ -168,12 +168,15 @@ client.connect().then(() => {
     console.log('Connected to MongoDB');
 
     // Démarrez le serveur uniquement après avoir établi la connexion à la base de données
-    app.listen(config.port, () => {
+    const server = app.listen(config.port, () => {
         console.log(`Server running on port ${config.port}`);
         updateTokenData().then(() => {
             cron.schedule('* * * * *', updateTokenData);
         });
     });
+
+    // Exporter le serveur pour les environnements qui en ont besoin
+    module.exports = server;
 }).catch(err => {
     console.error('Error connecting to MongoDB:', err);
     process.exit(1); // Exit the process if the connection fails
