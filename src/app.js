@@ -227,7 +227,6 @@ app.put('/api/tokens/:index', async (req, res) => {
         }
 
         const updates = req.body;
-
         console.log('Attempting to update token with index:', tokenIndex);
         console.log('Update payload:', updates);
 
@@ -236,28 +235,48 @@ app.put('/api/tokens/:index', async (req, res) => {
             return res.status(500).json({ error: 'Database connection not established' });
         }
 
-        // Vérifier si le token existe
+        // First verify the token exists
         const existingToken = await db.collection('allTokens').findOne({ index: tokenIndex });
         
         if (!existingToken) {
-            console.log('Token not found with index:', tokenIndex);
+            console.log(`Token not found with index: ${tokenIndex}`);
             return res.status(404).json({ error: 'Token not found' });
         }
 
-        // Mise à jour du document
+        // Validate the update payload
+        const allowedFields = [
+            'teamAllocation', 'airdrop1', 'airdrop2', 'devReputation',
+            'spreadLessThanThree', 'thickObLiquidity', 'noSellPressure',
+            'twitter', 'telegram', 'discord', 'website', 'comment'
+        ];
+
+        const sanitizedUpdates = {};
+        for (const [key, value] of Object.entries(updates)) {
+            if (allowedFields.includes(key)) {
+                sanitizedUpdates[key] = value;
+            }
+        }
+
+        if (Object.keys(sanitizedUpdates).length === 0) {
+            return res.status(400).json({ error: 'No valid fields to update' });
+        }
+
+        // Perform the update with additional logging
         const result = await db.collection('allTokens').findOneAndUpdate(
             { index: tokenIndex },
-            { $set: { 
-                ...updates,
-                lastUpdated: new Date().toISOString()
-            }},
+            { 
+                $set: { 
+                    ...sanitizedUpdates,
+                    lastUpdated: new Date().toISOString()
+                }
+            },
             { 
                 returnDocument: 'after'
             }
         );
 
         if (!result.value) {
-            console.error('Update failed - no document returned');
+            console.error(`Update failed for token ${tokenIndex}:`, result);
             return res.status(500).json({ error: 'Error updating token' });
         }
 
@@ -268,7 +287,7 @@ app.put('/api/tokens/:index', async (req, res) => {
         });
 
     } catch (error) {
-        console.error('Error updating token:', error);
+        console.error('Error updating token:', error.stack);
         res.status(500).json({ 
             error: 'Error updating token data',
             details: error.message
