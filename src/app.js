@@ -134,13 +134,36 @@ if (!fs.existsSync(dataDir)) {
 
 app.get('/api/tokens', async (req, res) => {
     try {
+        console.log('Checking database connection...');
+        if (!db) {
+            console.error('Database connection not established');
+            return res.status(500).json({ error: 'Database connection not established' });
+        }
+
         console.log('Fetching token data from database...');
-        const data = await db.collection('allTokens').find({}).toArray();
-        console.log('Token data fetched successfully:', data);
+        const collection = db.collection('allTokens');
+        if (!collection) {
+            console.error('Collection not found');
+            return res.status(500).json({ error: 'Collection not found' });
+        }
+
+        const data = await collection.find({}).toArray();
+        console.log(`Found ${data.length} tokens`);
+        
+        if (!data || data.length === 0) {
+            console.log('No tokens found in database');
+            return res.json([]);
+        }
+
+        console.log('Token data fetched successfully');
         res.json(data);
     } catch (error) {
-        console.error('Error reading token data:', error);
-        res.status(500).json({ error: 'Error reading token data' });
+        console.error('Detailed error:', error);
+        res.status(500).json({ 
+            error: 'Error reading token data',
+            details: error.message,
+            stack: error.stack
+        });
     }
 });
 
