@@ -226,7 +226,6 @@ app.put('/api/tokens/:index', async (req, res) => {
         console.log('Attempting to update token with index:', tokenIndex);
         console.log('Update payload:', updates);
 
-        // Vérifier la connexion à la base de données
         if (!db) {
             console.error('Database connection not established');
             return res.status(500).json({ error: 'Database connection not established' });
@@ -234,58 +233,40 @@ app.put('/api/tokens/:index', async (req, res) => {
 
         // Vérifier si le token existe
         const existingToken = await db.collection('allTokens').findOne({ index: tokenIndex });
-        console.log('Existing token:', existingToken);
         
         if (!existingToken) {
             console.log('Token not found with index:', tokenIndex);
             return res.status(404).json({ error: 'Token not found' });
         }
 
-        // Préparer les données de mise à jour
-        const updateData = {
-            ...existingToken,
-            ...updates,
-            index: tokenIndex, // Garantir que l'index reste inchangé
-            lastUpdated: new Date().toISOString()
-        };
-
-        // Supprimer _id pour éviter les erreurs de MongoDB
-        delete updateData._id;
-
-        console.log('Final update data:', updateData);
-
-        // Effectuer la mise à jour
+        // Mise à jour du document
         const result = await db.collection('allTokens').findOneAndUpdate(
             { index: tokenIndex },
-            { $set: updateData },
+            { $set: { 
+                ...updates,
+                lastUpdated: new Date().toISOString()
+            }},
             { 
-                returnDocument: 'after',
-                upsert: false
+                returnDocument: 'after'
             }
         );
-
-        console.log('Update operation result:', result);
 
         if (!result.value) {
             console.error('Update failed - no document returned');
             return res.status(500).json({ error: 'Error updating token' });
         }
 
-        // Vérifier la mise à jour
-        const updatedToken = await db.collection('allTokens').findOne({ index: tokenIndex });
-        console.log('Verification - Updated token:', updatedToken);
-
+        console.log('Token updated successfully:', result.value);
         res.json({ 
             message: 'Token updated successfully', 
-            token: updatedToken
+            token: result.value
         });
 
     } catch (error) {
-        console.error('Detailed error during update:', error);
+        console.error('Error updating token:', error);
         res.status(500).json({ 
             error: 'Error updating token data',
-            details: error.message,
-            stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
+            details: error.message
         });
     }
 });
