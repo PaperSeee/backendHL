@@ -104,10 +104,16 @@ async function updateTokenData() {
 
                 if (!existingToken) {
                     console.log(`New token found: ${token.name}`);
-                    await db.collection('allTokens').insertOne(tokenData);
+                    const insertResult = await db.collection('allTokens').insertOne(tokenData);
+                    console.log('Insert result:', insertResult);
                     hasChanges = true;
                 } else {
-                    await db.collection('allTokens').updateOne({ tokenId: token.tokenId }, { $set: tokenData });
+                    const updateResult = await db.collection('allTokens').findOneAndUpdate(
+                        { tokenId: token.tokenId },
+                        { $set: tokenData },
+                        { returnDocument: 'after' }
+                    );
+                    console.log('Update result:', updateResult.value);
                     hasChanges = true;
                 }
             } catch (error) {
@@ -202,17 +208,31 @@ app.put('/api/tokens/:index', async (req, res) => {
         const tokenIndex = parseInt(req.params.index, 10);
         const updates = req.body;
 
-        const result = await db.collection('allTokens').updateOne({ index: tokenIndex }, { $set: updates });
+        // Ajouter un timestamp de mise à jour
+        updates.lastUpdated = new Date().toISOString();
 
-        if (result.matchedCount === 0) {
+        const result = await db.collection('allTokens').findOneAndUpdate(
+            { index: tokenIndex },
+            { $set: updates },
+            { returnDocument: 'after' } // Retourne le document après la mise à jour
+        );
+
+        if (!result.value) {
             return res.status(404).json({ error: 'Token not found' });
         }
 
-        const updatedToken = await db.collection('allTokens').findOne({ index: tokenIndex });
-        res.json({ message: 'Token updated successfully', token: updatedToken });
+        console.log('Token updated:', result.value);
+        res.json({ 
+            message: 'Token updated successfully', 
+            token: result.value
+        });
 
     } catch (error) {
-        res.status(500).json({ error: 'Error updating token data' });
+        console.error('Error updating token:', error);
+        res.status(500).json({ 
+            error: 'Error updating token data',
+            details: error.message
+        });
     }
 });
 
