@@ -218,17 +218,12 @@ app.get('/api/tokens', async (req, res) => {
     }
 });
 
-app.put('/api/tokens/:index', async (req, res) => {
+app.put('/api/tokens/:tokenId', async (req, res) => {
     try {
-        const tokenIndex = parseInt(req.params.index, 10);
-
-        if (isNaN(tokenIndex)) {
-            return res.status(400).json({ error: 'Invalid token index' });
-        }
-
+        const tokenId = req.params.tokenId;
         const updates = req.body;
 
-        console.log('Attempting to update token with index:', tokenIndex);
+        console.log('Attempting to update token with tokenId:', tokenId);
         console.log('Update payload:', updates);
 
         if (!db) {
@@ -237,16 +232,16 @@ app.put('/api/tokens/:index', async (req, res) => {
         }
 
         // Vérifier si le token existe
-        const existingToken = await db.collection('allTokens').findOne({ index: tokenIndex });
+        const existingToken = await db.collection('allTokens').findOne({ tokenId: tokenId });
         
         if (!existingToken) {
-            console.log('Token not found with index:', tokenIndex);
+            console.log('Token not found with tokenId:', tokenId);
             return res.status(404).json({ error: 'Token not found' });
         }
 
         // Mise à jour du document
         const result = await db.collection('allTokens').findOneAndUpdate(
-            { index: tokenIndex },
+            { tokenId: tokenId },
             { $set: { 
                 ...updates,
                 lastUpdated: new Date().toISOString()
