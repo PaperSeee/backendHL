@@ -34,7 +34,7 @@
       "launchDate": "2024-04-16",
       "auctionPrice": null,
       "launchCircSupply": "597820456.36773002",
-      "teamAllocation": null,
+      "teamAllocation": "16%",
       "airdrop1": null,
       "airdrop2": null,
       "markPx": "0.34315",
@@ -58,7 +58,7 @@
       "launchDate": "2024-05-16",
       "auctionPrice": null,
       "launchCircSupply": "997020.88710464",
-      "teamAllocation": null,
+      "teamAllocation": "30%",
       "airdrop1": {
         "token": "PURR",
         "amount": 300000,
@@ -114,7 +114,7 @@
       "launchDate": "2024-05-22",
       "auctionPrice": null,
       "launchCircSupply": "9777540.52536",
-      "teamAllocation": null,
+      "teamAllocation": "25%",
       "airdrop1": {
         "token": "PURR",
         "amount": 500000,
@@ -142,7 +142,7 @@
       "launchDate": "2024-05-24",
       "auctionPrice": null,
       "launchCircSupply": "991164.41064",
-      "teamAllocation": null,
+      "teamAllocation": "10%",
       "airdrop1": {
         "token": "PURR",
         "amount": 600000,
@@ -170,7 +170,7 @@
       "launchDate": "2024-05-25",
       "auctionPrice": null,
       "launchCircSupply": "6658445.56603327",
-      "teamAllocation": null,
+      "teamAllocation": "0%",
       "airdrop1": null,
       "airdrop2": null,
       "markPx": "0.77878",
@@ -194,7 +194,7 @@
       "launchDate": "2024-05-26",
       "auctionPrice": null,
       "launchCircSupply": "367506974.11158478",
-      "teamAllocation": null,
+      "teamAllocation": "24%",
       "airdrop1": {
         "token": "PURR",
         "amount": 69300000,
@@ -226,7 +226,7 @@
       "launchDate": "2024-05-28",
       "auctionPrice": null,
       "launchCircSupply": "982996261.68060994",
-      "teamAllocation": null,
+      "teamAllocation": "90%",
       "airdrop1": {
         "token": "PURR",
         "amount": 1000000,
@@ -254,7 +254,7 @@
       "launchDate": "2024-05-29",
       "auctionPrice": null,
       "launchCircSupply": "99573904.28534",
-      "teamAllocation": null,
+      "teamAllocation": "0%",
       "airdrop1": {
         "token": "PURR",
         "amount": 40000000,
@@ -286,7 +286,7 @@
       "launchDate": "2024-05-31",
       "auctionPrice": null,
       "launchCircSupply": "99781965.6887123",
-      "teamAllocation": null,
+      "teamAllocation": "0%",
       "airdrop1": {
         "token": "MANLET",
         "amount": 10000000,
@@ -318,7 +318,7 @@
       "launchDate": "2024-06-01",
       "auctionPrice": null,
       "launchCircSupply": "998417733.70582402",
-      "teamAllocation": null,
+      "teamAllocation": "5%",
       "airdrop1": {
         "token": "PURR",
         "amount": 350000000,
@@ -346,7 +346,7 @@
       "launchDate": "2024-06-02",
       "auctionPrice": null,
       "launchCircSupply": "99731486.418033",
-      "teamAllocation": null,
+      "teamAllocation": "0%",
       "airdrop1": {
         "token": "MANLET",
         "amount": 15000000,
@@ -378,7 +378,7 @@
       "launchDate": "2024-06-04",
       "auctionPrice": null,
       "launchCircSupply": "693211735.89012003",
-      "teamAllocation": null,
+      "teamAllocation": "10%",
       "airdrop1": {
         "token": "PURR",
         "amount": 69420000,
@@ -410,7 +410,7 @@
       "launchDate": "2024-06-05",
       "auctionPrice": null,
       "launchCircSupply": "99781810.05438",
-      "teamAllocation": null,
+      "teamAllocation": "0%",
       "airdrop1": {
         "token": "HFUN",
         "amount": 10000000,
@@ -442,7 +442,7 @@
       "launchDate": "2024-06-06",
       "auctionPrice": null,
       "launchCircSupply": "692461270.49688995",
-      "teamAllocation": null,
+      "teamAllocation": "1%",
       "airdrop1": {
         "token": "JEFF",
         "amount": 204789000,
@@ -474,7 +474,7 @@
       "launchDate": "2024-06-08",
       "auctionPrice": null,
       "launchCircSupply": "138389809.04443935",
-      "teamAllocation": null,
+      "teamAllocation": "4%",
       "airdrop1": {
         "token": "JEFF",
         "amount": 75000000,
@@ -502,7 +502,7 @@
       "launchDate": "2024-06-08",
       "auctionPrice": null,
       "launchCircSupply": "4437490.1447997",
-      "teamAllocation": null,
+      "teamAllocation": "8%",
       "airdrop1": {
         "token": "PURR",
         "amount": 167716.4494287,
@@ -534,7 +534,7 @@
       "launchDate": "2024-06-10",
       "auctionPrice": null,
       "launchCircSupply": "733506969.92739999",
-      "teamAllocation": null,
+      "teamAllocation": "5%",
       "airdrop1": {
         "token": "PURR",
         "amount": 155555555.4,
@@ -566,7 +566,7 @@
       "launchDate": "2024-06-12",
       "auctionPrice": null,
       "launchCircSupply": "99961549.18652",
-      "teamAllocation": null,
+      "teamAllocation": "1%",
       "airdrop1": {
         "token": "PURR",
         "amount": 100000,
@@ -594,7 +594,7 @@
       "launchDate": "2024-06-12",
       "auctionPrice": null,
       "launchCircSupply": "99930393.67941",
-      "teamAllocation": null,
+      "teamAllocation": "1%",
       "airdrop1": {
         "token": "PURR",
         "amount": 100000,
@@ -622,7 +622,7 @@
       "launchDate": "2024-06-14",
       "auctionPrice": null,
       "launchCircSupply": "10650016.986492",
-      "teamAllocation": null,
+      "teamAllocation": "30%",
       "airdrop1": {
         "token": "PURR",
         "amount": 1077777.777777,
@@ -654,7 +654,7 @@
       "launchDate": "2024-06-15",
       "auctionPrice": null,
       "launchCircSupply": "806838637.27084994",
-      "teamAllocation": null,
+      "teamAllocation": "0%",
       "airdrop1": {
         "token": "FUCKY",
         "amount": 7000000,
@@ -682,7 +682,7 @@
       "launchDate": "2024-06-17",
       "auctionPrice": null,
       "launchCircSupply": "159272254.38910735",
-      "teamAllocation": null,
+      "teamAllocation": "33.5%",
       "airdrop1": {
         "token": "XULIAN",
         "amount": 3200000,
@@ -714,7 +714,7 @@
       "launchDate": "2024-06-18",
       "auctionPrice": null,
       "launchCircSupply": "758238720.79689002",
-      "teamAllocation": null,
+      "teamAllocation": "8%",
       "airdrop1": {
         "token": "ANSEM",
         "amount": 120000000,
@@ -746,7 +746,7 @@
       "launchDate": "2024-06-19",
       "auctionPrice": null,
       "launchCircSupply": "9955387.32191581",
-      "teamAllocation": null,
+      "teamAllocation": "3%",
       "airdrop1": {
         "token": "PURR",
         "amount": 3000000,
@@ -778,7 +778,7 @@
       "launchDate": "2024-06-21",
       "auctionPrice": null,
       "launchCircSupply": "1047348957.43482006",
-      "teamAllocation": null,
+      "teamAllocation": "5%",
       "airdrop1": null,
       "airdrop2": null,
       "markPx": "0.0005014",
@@ -802,7 +802,7 @@
       "launchDate": "2024-06-22",
       "auctionPrice": null,
       "launchCircSupply": "997932.07440426",
-      "teamAllocation": null,
+      "teamAllocation": "30%",
       "airdrop1": {
         "token": "HFUN",
         "amount": 300000,
@@ -830,7 +830,7 @@
       "launchDate": "2024-06-23",
       "auctionPrice": null,
       "launchCircSupply": "9926309.1233739",
-      "teamAllocation": null,
+      "teamAllocation": "10%",
       "airdrop1": {
         "token": "PURR",
         "amount": 7500000,
@@ -858,7 +858,7 @@
       "launchDate": "2024-06-24",
       "auctionPrice": null,
       "launchCircSupply": "988603.60288667",
-      "teamAllocation": null,
+      "teamAllocation": "10%",
       "airdrop1": null,
       "airdrop2": null,
       "markPx": "0.52058",
@@ -882,7 +882,7 @@
       "launchDate": "2024-06-26",
       "auctionPrice": null,
       "launchCircSupply": "318985571.39649999",
-      "teamAllocation": null,
+      "teamAllocation": "25%",
       "airdrop1": {
         "token": "PURR",
         "amount": 100000000,
@@ -914,7 +914,7 @@
       "launchDate": "2024-06-27",
       "auctionPrice": null,
       "launchCircSupply": "897372844.00278997",
-      "teamAllocation": null,
+      "teamAllocation": "70%",
       "airdrop1": null,
       "airdrop2": null,
       "markPx": "0.00042876",
@@ -938,7 +938,7 @@
       "launchDate": "2024-06-28",
       "auctionPrice": null,
       "launchCircSupply": "85969082.3424513",
-      "teamAllocation": null,
+      "teamAllocation": "12.5%",
       "airdrop1": {
         "token": "POINTS",
         "amount": 30000000,
@@ -970,7 +970,7 @@
       "launchDate": "2024-06-29",
       "auctionPrice": null,
       "launchCircSupply": "901867068.47691",
-      "teamAllocation": null,
+      "teamAllocation": "10%",
       "airdrop1": {
         "token": "PURR",
         "amount": 300000000,
@@ -1002,7 +1002,7 @@
       "launchDate": "2024-06-30",
       "auctionPrice": null,
       "launchCircSupply": "868394.521145",
-      "teamAllocation": null,
+      "teamAllocation": "10%",
       "airdrop1": {
         "token": "PURR",
         "amount": 600000,
@@ -1030,7 +1030,7 @@
       "launchDate": "2024-07-02",
       "auctionPrice": null,
       "launchCircSupply": "3110348279.89436579",
-      "teamAllocation": null,
+      "teamAllocation": "87%",
       "airdrop1": {
         "token": "PURR",
         "amount": 1000000000,
@@ -1058,7 +1058,7 @@
       "launchDate": "2024-07-03",
       "auctionPrice": null,
       "launchCircSupply": "78206525.97825",
-      "teamAllocation": null,
+      "teamAllocation": "50%",
       "airdrop1": {
         "token": "POINTS",
         "amount": 5000000,
@@ -1086,7 +1086,7 @@
       "launchDate": "2024-07-05",
       "auctionPrice": null,
       "launchCircSupply": "19934761924.69944",
-      "teamAllocation": null,
+      "teamAllocation": "10%",
       "airdrop1": {
         "token": "PURR",
         "amount": 8400000000,
@@ -1114,7 +1114,7 @@
       "launchDate": "2024-07-06",
       "auctionPrice": null,
       "launchCircSupply": "96484902.49141271",
-      "teamAllocation": null,
+      "teamAllocation": "10%",
       "airdrop1": {
         "token": "PURR",
         "amount": 1000000,
@@ -1142,7 +1142,7 @@
       "launchDate": "2024-07-07",
       "auctionPrice": "0.022779530197678848",
       "launchCircSupply": "36392624.57719487",
-      "teamAllocation": null,
+      "teamAllocation": "81%",
       "airdrop1": null,
       "airdrop2": null,
       "markPx": "0.11809",
@@ -1166,7 +1166,7 @@
       "launchDate": "2024-07-09",
       "auctionPrice": null,
       "launchCircSupply": "96837128.9986086",
-      "teamAllocation": null,
+      "teamAllocation": "8%",
       "airdrop1": {
         "token": "PURR",
         "amount": 10000000,
@@ -1191,7 +1191,8 @@
     {
       "name": "LEAP",
       "tokenId": "0xd2f2e10dbfbd43d6147f8784358f5dc4",
-      "index": 41
+      "index": 41,
+      "teamAllocation": null
     },
     {
       "name": "VAPOR",
@@ -1203,7 +1204,7 @@
       "launchDate": "2024-07-11",
       "auctionPrice": null,
       "launchCircSupply": "1002028200.81376004",
-      "teamAllocation": null,
+      "teamAllocation": "10%",
       "airdrop1": {
         "token": "PURR",
         "amount": 600000000,
@@ -1224,12 +1225,14 @@
     {
       "name": "PVP",
       "tokenId": "0x42825e552b0242aa26d641f5cb6aff56",
-      "index": 43
+      "index": 43,
+      "teamAllocation": null
     },
     {
       "name": "X",
       "tokenId": "0x54198368f92dcfbe88e3c2090526690a",
-      "index": 44
+      "index": 44,
+      "teamAllocation": null
     },
     {
       "name": "PILL",
@@ -1241,7 +1244,7 @@
       "launchDate": "2024-07-14",
       "auctionPrice": null,
       "launchCircSupply": "89417919.17235655",
-      "teamAllocation": null,
+      "teamAllocation": "5%",
       "airdrop1": {
         "token": "RUG",
         "amount": 30000000,
@@ -1273,7 +1276,7 @@
       "launchDate": "2024-07-16",
       "auctionPrice": null,
       "launchCircSupply": "99392991.13146",
-      "teamAllocation": null,
+      "teamAllocation": "0%",
       "airdrop1": {
         "token": "POINTS",
         "amount": 30000000,
@@ -1305,7 +1308,7 @@
       "launchDate": "2024-07-18",
       "auctionPrice": null,
       "launchCircSupply": "6391327.0874434",
-      "teamAllocation": null,
+      "teamAllocation": "43%",
       "airdrop1": {
         "token": "SCHIZO",
         "amount": 1000000,
@@ -1369,7 +1372,7 @@
       "launchDate": "2024-07-20",
       "auctionPrice": null,
       "launchCircSupply": "98436074.39352",
-      "teamAllocation": null,
+      "teamAllocation": "35%",
       "airdrop1": {
         "token": "PURR",
         "amount": 5000000,
@@ -1401,7 +1404,7 @@
       "launchDate": "2024-07-22",
       "auctionPrice": null,
       "launchCircSupply": "6730835.1669487",
-      "teamAllocation": null,
+      "teamAllocation": "40%",
       "airdrop1": {
         "token": "PURR",
         "amount": 2000000,
@@ -1429,7 +1432,7 @@
       "launchDate": "2024-07-23",
       "auctionPrice": null,
       "launchCircSupply": "80609947.4475145",
-      "teamAllocation": null,
+      "teamAllocation": "15%",
       "airdrop1": {
         "token": "CZ",
         "amount": 10000000,
@@ -1461,7 +1464,7 @@
       "launchDate": "2024-07-24",
       "auctionPrice": null,
       "launchCircSupply": "880584086.40938675",
-      "teamAllocation": null,
+      "teamAllocation": "5%",
       "airdrop1": {
         "token": "POINTS",
         "amount": 250000000,
@@ -1518,7 +1521,8 @@
     {
       "name": "COKE",
       "tokenId": "0x2f0f48f1d1698fd483a0f6f8ebe9782e",
-      "index": 54
+      "index": 54,
+      "teamAllocation": null
     },
     {
       "name": "JEET",
@@ -1530,7 +1534,7 @@
       "launchDate": "2024-07-28",
       "auctionPrice": null,
       "launchCircSupply": "82815735.99656001",
-      "teamAllocation": null,
+      "teamAllocation": "8%",
       "airdrop1": {
         "token": "POINTS",
         "amount": 40000000,
@@ -1562,7 +1566,7 @@
       "launchDate": "2024-07-29",
       "auctionPrice": null,
       "launchCircSupply": "95262436.4085363",
-      "teamAllocation": null,
+      "teamAllocation": "0%",
       "airdrop1": {
         "token": "CZ",
         "amount": 15000000,
@@ -1587,7 +1591,8 @@
     {
       "name": "CBD",
       "tokenId": "0xb7bf6dd48ffeb66c22524e065abe6733",
-      "index": 57
+      "index": 57,
+      "teamAllocation": null
     },
     {
       "name": "ARI",
@@ -1599,7 +1604,7 @@
       "launchDate": "2024-08-01",
       "auctionPrice": null,
       "launchCircSupply": "97047015.11597374",
-      "teamAllocation": null,
+      "teamAllocation": "30%",
       "airdrop1": {
         "token": "PURR",
         "amount": 30000000,
@@ -1627,7 +1632,7 @@
       "launchDate": "2024-08-02",
       "auctionPrice": null,
       "launchCircSupply": "95195491.86668999",
-      "teamAllocation": null,
+      "teamAllocation": "10%",
       "airdrop1": {
         "token": "PANDA",
         "amount": 21000000,
@@ -1652,7 +1657,8 @@
     {
       "name": "KING",
       "tokenId": "0x4b5aea9c6624f354fdfe28274a363f27",
-      "index": 60
+      "index": 60,
+      "teamAllocation": null
     },
     {
       "name": "MEOW",
@@ -1696,7 +1702,7 @@
       "launchDate": "2024-08-06",
       "auctionPrice": null,
       "launchCircSupply": "999554.10958453",
-      "teamAllocation": null,
+      "teamAllocation": "50%",
       "airdrop1": null,
       "airdrop2": null,
       "markPx": "0.45432",
@@ -1720,7 +1726,7 @@
       "launchDate": "2024-08-07",
       "auctionPrice": null,
       "launchCircSupply": "3996684.059865",
-      "teamAllocation": null,
+      "teamAllocation": "87%",
       "airdrop1": null,
       "airdrop2": null,
       "markPx": "0.10032",
@@ -1744,7 +1750,7 @@
       "launchDate": "2024-08-08",
       "auctionPrice": "0.004290563109640768",
       "launchCircSupply": "907553.50766208",
-      "teamAllocation": null,
+      "teamAllocation": "76%",
       "airdrop1": null,
       "airdrop2": null,
       "markPx": "6.7151",
@@ -1761,7 +1767,8 @@
     {
       "name": "FRCT",
       "tokenId": "0xfebf76468dd13f240281e4a8ef11932d",
-      "index": 65
+      "index": 65,
+      "teamAllocation": null
     },
     {
       "name": "COZY",
@@ -1773,7 +1780,7 @@
       "launchDate": "2024-08-11",
       "auctionPrice": "0.010478651146068631",
       "launchCircSupply": "1233003.58060373",
-      "teamAllocation": null,
+      "teamAllocation": "71%",
       "airdrop1": null,
       "airdrop2": null,
       "markPx": "0.76548",
@@ -1797,7 +1804,7 @@
       "launchDate": "2024-08-13",
       "auctionPrice": "0.002796958538724708",
       "launchCircSupply": "1038527.22869622",
-      "teamAllocation": null,
+      "teamAllocation": "68%",
       "airdrop1": null,
       "airdrop2": null,
       "markPx": "1.9564",
@@ -1814,7 +1821,8 @@
     {
       "name": "POP",
       "tokenId": "0x99ffa3c6ae342dcd532c8431bf4f3474",
-      "index": 68
+      "index": 68,
+      "teamAllocation": null
     },
     {
       "name": "NFT",
@@ -1826,7 +1834,7 @@
       "launchDate": "2024-08-15",
       "auctionPrice": null,
       "launchCircSupply": "841023.7827821",
-      "teamAllocation": null,
+      "teamAllocation": "59%",
       "airdrop1": null,
       "airdrop2": null,
       "markPx": "0.98452",
@@ -1843,7 +1851,8 @@
     {
       "name": "JEFE",
       "tokenId": "0xe711c656aaadefe8f15579ca22679acd",
-      "index": 70
+      "index": 70,
+      "teamAllocation": null
     },
     {
       "name": "PEAR",
@@ -1887,7 +1896,7 @@
       "launchDate": "2024-08-19",
       "auctionPrice": null,
       "launchCircSupply": "931062.39677017",
-      "teamAllocation": null,
+      "teamAllocation": "59%",
       "airdrop1": null,
       "airdrop2": null,
       "markPx": "1.3227",
@@ -1904,7 +1913,8 @@
     {
       "name": "BRIDGE",
       "tokenId": "0xc196d2b7598991bd0425fc959bc1a40f",
-      "index": 73
+      "index": 73,
+      "teamAllocation": null
     },
     {
       "name": "GUESS",
@@ -1948,7 +1958,7 @@
       "launchDate": "2024-08-22",
       "auctionPrice": null,
       "launchCircSupply": "1004143.42878893",
-      "teamAllocation": null,
+      "teamAllocation": "59%",
       "airdrop1": null,
       "airdrop2": null,
       "markPx": "0.52123",
@@ -2045,7 +2055,8 @@
     {
       "name": "TIME",
       "tokenId": "0xae3f9675b5825ab20850ce6229c4bdbd",
-      "index": 79
+      "index": 79,
+      "teamAllocation": null
     },
     {
       "name": "BERA",
@@ -2082,12 +2093,14 @@
     {
       "name": "ANGY",
       "tokenId": "0x56236a47fbbcc41ea8043207bfa0118d",
-      "index": 81
+      "index": 81,
+      "teamAllocation": null
     },
     {
       "name": "DOG",
       "tokenId": "0xb37dc8f9819f5c7be5393c2241d28d28",
-      "index": 82
+      "index": 82,
+      "teamAllocation": null
     },
     {
       "name": "MOON",
@@ -2148,37 +2161,44 @@
     {
       "name": "PAIN",
       "tokenId": "0x6e99a27fd1de4723848e32d7106aa59f",
-      "index": 85
+      "index": 85,
+      "teamAllocation": null
     },
     {
       "name": "VDO",
       "tokenId": "0x2364d4a94a2a9f89a53b976fa8cadc80",
-      "index": 86
+      "index": 86,
+      "teamAllocation": null
     },
     {
       "name": "HQ",
       "tokenId": "0xf6f58625ba95ecde953f4aafc7af53fd",
-      "index": 87
+      "index": 87,
+      "teamAllocation": null
     },
     {
       "name": "EUR",
       "tokenId": "0xd125b605fa732968610dd4962e9a7fb9",
-      "index": 88
+      "index": 88,
+      "teamAllocation": null
     },
     {
       "name": "REGARD",
       "tokenId": "0x86df9bf70b2d72f2b168508f90026469",
-      "index": 89
+      "index": 89,
+      "teamAllocation": null
     },
     {
       "name": "YUM",
       "tokenId": "0x6bc45d95a04a7fba29fdb3ecbeeb053d",
-      "index": 90
+      "index": 90,
+      "teamAllocation": null
     },
     {
       "name": "REKT",
       "tokenId": "0x4626a44a785134109cae9ea21f33d9a0",
-      "index": 91
+      "index": 91,
+      "teamAllocation": null
     },
     {
       "name": "NMTD",
@@ -2279,7 +2299,8 @@
     {
       "name": "IRL",
       "tokenId": "0x2ef25ace7c11f77f0de071b15e8b0bc0",
-      "index": 96
+      "index": 96,
+      "teamAllocation": null
     },
     {
       "name": "RISE",
@@ -2568,12 +2589,14 @@
     {
       "name": "L",
       "tokenId": "0xdb7d7cd808bdad7cedf44b5864c3866c",
-      "index": 108
+      "index": 108,
+      "teamAllocation": null
     },
     {
       "name": "H",
       "tokenId": "0x52a110041682dbf38277c80a72eecba6",
-      "index": 109
+      "index": 109,
+      "teamAllocation": null
     },
     {
       "name": "G",
@@ -2602,7 +2625,8 @@
     {
       "name": "SCAM",
       "tokenId": "0x425e14eb167930e81390c8091bc2d8b7",
-      "index": 111
+      "index": 111,
+      "teamAllocation": null
     },
     {
       "name": "MONAD",
@@ -2727,12 +2751,14 @@
     {
       "name": "GIGA",
       "tokenId": "0xe536ad7c82d63a53aafe6ae9f19c7e03",
-      "index": 116
+      "index": 116,
+      "teamAllocation": null
     },
     {
       "name": "FELIX",
       "tokenId": "0x601138020f6eeb930be04fbc31379f08",
-      "index": 117
+      "index": 117,
+      "teamAllocation": null
     },
     {
       "name": "SPH",
@@ -2761,17 +2787,20 @@
     {
       "name": "STHYPE",
       "tokenId": "0x244d19a8576a492f44ee19622f4104e4",
-      "index": 119
+      "index": 119,
+      "teamAllocation": null
     },
     {
       "name": "HPL",
       "tokenId": "0x5e887f0c6c3deec190c36186bf23369f",
-      "index": 120
+      "index": 120,
+      "teamAllocation": null
     },
     {
       "name": "KHYPE",
       "tokenId": "0xbc8a22f25703a03101630ce6b09f4baa",
-      "index": 121
+      "index": 121,
+      "teamAllocation": null
     },
     {
       "name": "HOPE",
@@ -2828,7 +2857,8 @@
     {
       "name": "KNTQ",
       "tokenId": "0xbd31bd605c0a1b82c72aae3587f9061f",
-      "index": 124
+      "index": 124,
+      "teamAllocation": null
     },
     {
       "name": "BUSSY",
@@ -3337,7 +3367,8 @@
     {
       "name": "FAN",
       "tokenId": "0x1fedb171e381fce7051832b8bc72ef34",
-      "index": 145
+      "index": 145,
+      "teamAllocation": null
     },
     {
       "name": "MUNCH",
@@ -3558,12 +3589,14 @@
     {
       "name": "STAR",
       "tokenId": "0x68aa39b6a6d8abe04ba97d3953fea816",
-      "index": 154
+      "index": 154,
+      "teamAllocation": null
     },
     {
       "name": "WATAR",
       "tokenId": "0xc48ddbfec007fa7443259f6b1598797c",
-      "index": 155
+      "index": 155,
+      "teamAllocation": null
     },
     {
       "name": "GENESY",
@@ -3592,7 +3625,8 @@
     {
       "name": "SOLV",
       "tokenId": "0xcf548188e24a0ce3dc3b281242baafd9",
-      "index": 157
+      "index": 157,
+      "teamAllocation": null
     },
     {
       "name": "BUBZ",
@@ -3645,7 +3679,8 @@
     {
       "name": "HYFI",
       "tokenId": "0x1c351bfdefb12591e9329adb38cdcbae",
-      "index": 160
+      "index": 160,
+      "teamAllocation": null
     },
     {
       "name": "FARM",
@@ -3698,27 +3733,32 @@
     {
       "name": "SOVRN",
       "tokenId": "0xc6aef97252f0081eb8246e24f24c5fe7",
-      "index": 163
+      "index": 163,
+      "teamAllocation": null
     },
     {
       "name": "MON",
       "tokenId": "0x622cf551933f19f9136303dcab56488c",
-      "index": 164
+      "index": 164,
+      "teamAllocation": null
     },
     {
       "name": "GOD",
       "tokenId": "0x5e525c76aa6e1f0a80fd8a0e71b77c45",
-      "index": 165
+      "index": 165,
+      "teamAllocation": null
     },
     {
       "name": "CREAM",
       "tokenId": "0x45b7ba9b61a02d94c19e606d99b7a263",
-      "index": 166
+      "index": 166,
+      "teamAllocation": null
     },
     {
       "name": "ANIME",
       "tokenId": "0x0d5012952afd6e4d76baa0a73d16a937",
-      "index": 167
+      "index": 167,
+      "teamAllocation": null
     },
     {
       "name": "HYENA",
@@ -3755,32 +3795,38 @@
     {
       "name": "ETHC",
       "tokenId": "0x8d3aeb9873bfbe64eb0554e6fde38a8b",
-      "index": 169
+      "index": 169,
+      "teamAllocation": null
     },
     {
       "name": "ANZ",
       "tokenId": "0xd50882aa1d890629d02b2a616dde56e5",
-      "index": 170
+      "index": 170,
+      "teamAllocation": null
     },
     {
       "name": "GAME",
       "tokenId": "0x323f0986ba5b7f6e8e968e3d072bcd3e",
-      "index": 171
+      "index": 171,
+      "teamAllocation": null
     },
     {
       "name": "RIFT",
       "tokenId": "0x0b983d0a300f75b148a6a96ed4c6f793",
-      "index": 172
+      "index": 172,
+      "teamAllocation": null
     },
     {
       "name": "SWELL",
       "tokenId": "0xc2fb8b0d924e6fffe98dd85e6f18f362",
-      "index": 173
+      "index": 173,
+      "teamAllocation": null
     },
     {
       "name": "DEPIN",
       "tokenId": "0x934a7e00c1b047c2d27967663f58befe",
-      "index": 174
+      "index": 174,
+      "teamAllocation": null
     }
   ]
 }
