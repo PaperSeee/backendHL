@@ -15,14 +15,6 @@ if (!process.env.MONGO_URI) {
 const client = new MongoClient(process.env.MONGO_URI);
 let db;
 
-client.connect().then(() => {
-    db = client.db('backendHL');
-    console.log('Connected to MongoDB');
-}).catch(err => {
-    console.error('Error connecting to MongoDB:', err);
-    process.exit(1); // Exit the process if the connection fails
-});
-
 const config = {
     port: process.env.PORT || 3000,
     hyperliquidApiUrl: process.env.HYPERLIQUID_API_URL,
@@ -171,9 +163,18 @@ app.put('/api/tokens/:index', async (req, res) => {
     }
 });
 
-app.listen(config.port, () => {
-    console.log(`Server running on port ${config.port}`);
-    updateTokenData().then(() => {
-        cron.schedule('* * * * *', updateTokenData);
+client.connect().then(() => {
+    db = client.db('backendHL');
+    console.log('Connected to MongoDB');
+
+    // Démarrez le serveur uniquement après avoir établi la connexion à la base de données
+    app.listen(config.port, () => {
+        console.log(`Server running on port ${config.port}`);
+        updateTokenData().then(() => {
+            cron.schedule('* * * * *', updateTokenData);
+        });
     });
+}).catch(err => {
+    console.error('Error connecting to MongoDB:', err);
+    process.exit(1); // Exit the process if the connection fails
 });
