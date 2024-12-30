@@ -208,20 +208,41 @@ app.put('/api/tokens/:index', async (req, res) => {
         const tokenIndex = parseInt(req.params.index, 10);
         const updates = req.body;
 
-        // Ajouter un timestamp de mise à jour
-        updates.lastUpdated = new Date().toISOString();
+        console.log('Updating token with index:', tokenIndex);
+        console.log('Updates:', updates);
 
-        const result = await db.collection('allTokens').findOneAndUpdate(
-            { index: tokenIndex },
-            { $set: updates },
-            { returnDocument: 'after' } // Retourne le document après la mise à jour
-        );
-
-        if (!result.value) {
+        // Vérifier d'abord si le token existe
+        const existingToken = await db.collection('allTokens').findOne({ index: tokenIndex });
+        
+        if (!existingToken) {
+            console.log('Token not found with index:', tokenIndex);
             return res.status(404).json({ error: 'Token not found' });
         }
 
-        console.log('Token updated:', result.value);
+        // Ajouter un timestamp de mise à jour
+        updates.lastUpdated = new Date().toISOString();
+
+        // Mise à jour avec les nouveaux champs tout en préservant les champs existants
+        const result = await db.collection('allTokens').findOneAndUpdate(
+            { index: tokenIndex },
+            { 
+                $set: {
+                    ...updates,
+                    index: tokenIndex // Garantir que l'index reste inchangé
+                }
+            },
+            { 
+                returnDocument: 'after',
+                upsert: false // Ne pas créer si n'existe pas
+            }
+        );
+
+        console.log('Update result:', result);
+
+        if (!result.value) {
+            return res.status(500).json({ error: 'Error updating token' });
+        }
+
         res.json({ 
             message: 'Token updated successfully', 
             token: result.value
@@ -231,7 +252,8 @@ app.put('/api/tokens/:index', async (req, res) => {
         console.error('Error updating token:', error);
         res.status(500).json({ 
             error: 'Error updating token data',
-            details: error.message
+            details: error.message,
+            stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
         });
     }
 });
