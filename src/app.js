@@ -119,10 +119,12 @@ async function updateTokenData() {
 
                 if (!existingToken) {
                     console.log(`New token found: ${token.name}`);
+                    console.log('Inserting new token data:', tokenData);
                     const insertResult = await db.collection('allTokens').insertOne(tokenData);
                     console.log('Insert result:', insertResult);
                     hasChanges = true;
                 } else {
+                    console.log('Updating existing token data:', tokenData);
                     const updateResult = await db.collection('allTokens').findOneAndUpdate(
                         { tokenIndex: token.index },
                         { $set: tokenData },
@@ -238,6 +240,7 @@ app.put('/api/tokens/:tokenIndex', async (req, res) => {
 
         // Vérifier si le token existe
         const existingToken = await db.collection('allTokens').findOne({ tokenIndex: tokenIndex });
+        console.log('Existing token:', existingToken);
         
         if (!existingToken) {
             console.log('Token not found with tokenIndex:', tokenIndex);
@@ -245,6 +248,7 @@ app.put('/api/tokens/:tokenIndex', async (req, res) => {
         }
 
         // Mise à jour du document
+        console.log('Updating token with data:', { ...updates, lastUpdated: new Date().toISOString() });
         const result = await db.collection('allTokens').findOneAndUpdate(
             { tokenIndex: tokenIndex },
             { $set: { 
@@ -255,6 +259,8 @@ app.put('/api/tokens/:tokenIndex', async (req, res) => {
                 returnDocument: 'after'
             }
         );
+
+        console.log('Update result:', result);
 
         if (!result.value) {
             console.error('Update failed - no document returned');
