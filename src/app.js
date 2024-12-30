@@ -221,6 +221,11 @@ app.get('/api/tokens', async (req, res) => {
 app.put('/api/tokens/:index', async (req, res) => {
     try {
         const tokenIndex = parseInt(req.params.index, 10);
+
+        if (isNaN(tokenIndex)) {
+            return res.status(400).json({ error: 'Invalid token index' });
+        }
+
         const updates = req.body;
 
         console.log('Attempting to update token with index:', tokenIndex);
