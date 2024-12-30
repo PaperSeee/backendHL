@@ -89,7 +89,10 @@ async function updateTokenData() {
                 const startPx = startPxEntry?.startPx || null;
 
                 const tokenData = {
-                    ...token,
+                    name: token.name,
+                    tokenId: token.tokenId,
+                    index: token.index,
+                    tokenIndex: token.index,
                     startPx: startPx,
                     markPx: details.markPx || null,
                     launchDate: details.deployTime?.split('T')[0] || null,
@@ -97,9 +100,21 @@ async function updateTokenData() {
                         ? (parseFloat(details.seededUsdc) / parseFloat(details.circulatingSupply)).toString()
                         : null,
                     launchCircSupply: details.circulatingSupply || null,
-                    launchMarketCap: startPx && details.maxSupply
+                    launchMarketCap: startPx && details.circulatingSupply
                         ? (parseFloat(startPx) * parseFloat(details.circulatingSupply)).toFixed(2)
-                        : null
+                        : null,
+                    teamAllocation: existingToken?.teamAllocation || null,
+                    airdrop1: existingToken?.airdrop1 || null,
+                    airdrop2: existingToken?.airdrop2 || null,
+                    devReputation: existingToken?.devReputation || false,
+                    spreadLessThanThree: existingToken?.spreadLessThanThree || false,
+                    thickObLiquidity: existingToken?.thickObLiquidity || false,
+                    noSellPressure: existingToken?.noSellPressure || false,
+                    twitter: existingToken?.twitter || "",
+                    telegram: existingToken?.telegram || "",
+                    discord: existingToken?.discord || "",
+                    website: existingToken?.website || "",
+                    comment: existingToken?.comment || ""
                 };
 
                 if (!existingToken) {
@@ -208,48 +223,65 @@ app.put('/api/tokens/:index', async (req, res) => {
         const tokenIndex = parseInt(req.params.index, 10);
         const updates = req.body;
 
-        console.log('Updating token with index:', tokenIndex);
-        console.log('Updates:', updates);
+        console.log('Attempting to update token with index:', tokenIndex);
+        console.log('Update payload:', updates);
 
-        // Vérifier d'abord si le token existe
+        // Vérifier la connexion à la base de données
+        if (!db) {
+            console.error('Database connection not established');
+            return res.status(500).json({ error: 'Database connection not established' });
+        }
+
+        // Vérifier si le token existe
         const existingToken = await db.collection('allTokens').findOne({ index: tokenIndex });
+        console.log('Existing token:', existingToken);
         
         if (!existingToken) {
             console.log('Token not found with index:', tokenIndex);
             return res.status(404).json({ error: 'Token not found' });
         }
 
-        // Ajouter un timestamp de mise à jour
-        updates.lastUpdated = new Date().toISOString();
+        // Préparer les données de mise à jour
+        const updateData = {
+            ...existingToken,
+            ...updates,
+            index: tokenIndex, // Garantir que l'index reste inchangé
+            lastUpdated: new Date().toISOString()
+        };
 
-        // Mise à jour avec les nouveaux champs tout en préservant les champs existants
+        // Supprimer _id pour éviter les erreurs de MongoDB
+        delete updateData._id;
+
+        console.log('Final update data:', updateData);
+
+        // Effectuer la mise à jour
         const result = await db.collection('allTokens').findOneAndUpdate(
             { index: tokenIndex },
-            { 
-                $set: {
-                    ...updates,
-                    index: tokenIndex // Garantir que l'index reste inchangé
-                }
-            },
+            { $set: updateData },
             { 
                 returnDocument: 'after',
-                upsert: false // Ne pas créer si n'existe pas
+                upsert: false
             }
         );
 
-        console.log('Update result:', result);
+        console.log('Update operation result:', result);
 
         if (!result.value) {
+            console.error('Update failed - no document returned');
             return res.status(500).json({ error: 'Error updating token' });
         }
 
+        // Vérifier la mise à jour
+        const updatedToken = await db.collection('allTokens').findOne({ index: tokenIndex });
+        console.log('Verification - Updated token:', updatedToken);
+
         res.json({ 
             message: 'Token updated successfully', 
-            token: result.value
+            token: updatedToken
         });
 
     } catch (error) {
-        console.error('Error updating token:', error);
+        console.error('Detailed error during update:', error);
         res.status(500).json({ 
             error: 'Error updating token data',
             details: error.message,
