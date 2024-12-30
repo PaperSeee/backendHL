@@ -132,6 +132,36 @@ if (!fs.existsSync(dataDir)) {
     fs.mkdirSync(dataDir);
 }
 
+// Créer une fonction pour initialiser la connexion à la base de données
+async function initializeDatabase() {
+    try {
+        await client.connect();
+        db = client.db('backendHL');
+        console.log('Connected to MongoDB');
+        return true;
+    } catch (error) {
+        console.error('Failed to connect to MongoDB:', error);
+        return false;
+    }
+}
+
+// Middleware pour vérifier la connexion à la base de données
+const checkDatabaseConnection = async (req, res, next) => {
+    if (!db) {
+        try {
+            const connected = await initializeDatabase();
+            if (!connected) {
+                return res.status(500).json({ error: 'Database connection failed' });
+            }
+        } catch (error) {
+            return res.status(500).json({ error: 'Database connection failed' });
+        }
+    }
+    next();
+};
+
+app.use(checkDatabaseConnection);
+
 app.get('/api/tokens', async (req, res) => {
     try {
         console.log('Checking database connection...');
@@ -189,20 +219,18 @@ app.put('/api/tokens/:index', async (req, res) => {
 // Exporter l'application avant d'établir la connexion
 module.exports = app;
 
-// Établir la connexion et démarrer le serveur seulement si ce n'est pas un import
+// Modifier le démarrage du serveur
 if (require.main === module) {
-    client.connect().then(() => {
-        db = client.db('backendHL');
-        console.log('Connected to MongoDB');
-
-        app.listen(config.port, () => {
-            console.log(`Server running on port ${config.port}`);
-            updateTokenData().then(() => {
-                cron.schedule('* * * * *', updateTokenData);
+    initializeDatabase().then(connected => {
+        if (connected) {
+            app.listen(config.port, () => {
+                console.log(`Server running on port ${config.port}`);
+                updateTokenData().then(() => {
+                    cron.schedule('* * * * *', updateTokenData);
+                });
             });
-        });
-    }).catch(err => {
-        console.error('Error connecting to MongoDB:', err);
-        process.exit(1);
+        } else {
+            process.exit(1);
+        }
     });
 }
