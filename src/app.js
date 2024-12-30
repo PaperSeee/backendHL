@@ -8,13 +8,9 @@ const pLimit = require('p-limit');
 require('dotenv').config();
 const { MongoClient } = require('mongodb');
 
-const config = {
-    port: process.env.PORT || 3000,
-    hyperliquidApiUrl: process.env.HYPERLIQUID_API_URL,
-    hypurrscanApiUrl: process.env.HYPURRSCAN_API_URL,
-    corsOrigin: process.env.CORS_ORIGIN,
-    pollingInterval: parseInt(process.env.POLLING_INTERVAL, 10) || 60000
-};
+if (!process.env.MONGO_URI) {
+    throw new Error('MONGO_URI is not defined in the environment variables');
+}
 
 const client = new MongoClient(process.env.MONGO_URI);
 let db;
@@ -24,7 +20,16 @@ client.connect().then(() => {
     console.log('Connected to MongoDB');
 }).catch(err => {
     console.error('Error connecting to MongoDB:', err);
+    process.exit(1); // Exit the process if the connection fails
 });
+
+const config = {
+    port: process.env.PORT || 3000,
+    hyperliquidApiUrl: process.env.HYPERLIQUID_API_URL,
+    hypurrscanApiUrl: process.env.HYPURRSCAN_API_URL,
+    corsOrigin: process.env.CORS_ORIGIN,
+    pollingInterval: parseInt(process.env.POLLING_INTERVAL, 10) || 60000
+};
 
 const limit = pLimit(5);
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
