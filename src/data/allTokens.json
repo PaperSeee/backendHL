@@ -66,10 +66,10 @@
       },
       "airdrop2": null,
       "markPx": "165.63",
-      "devReputation": false,
-      "spreadLessThanThree": false,
-      "thickObLiquidity": false,
-      "noSellPressure": false,
+      "devReputation": true,
+      "spreadLessThanThree": true,
+      "thickObLiquidity": true,
+      "noSellPressure": true,
       "twitter": "",
       "telegram": "https://t.me/HypurrFunBot?start=ref_74b56031",
       "discord": "",
@@ -130,7 +130,7 @@
       "telegram": "",
       "discord": "",
       "website": "",
-      "comment": ""
+      "comment": "Manlet scam tokenomic by the KOL Kcaz with 25% team alloc. Dev started selling Tokens on Day 1 and when caught distributed his team tokens to various wallets"
     },
     {
       "name": "JEFF",
@@ -150,15 +150,15 @@
       },
       "airdrop2": null,
       "markPx": "20.876",
-      "devReputation": false,
-      "spreadLessThanThree": false,
-      "thickObLiquidity": false,
-      "noSellPressure": false,
+      "devReputation": true,
+      "spreadLessThanThree": true,
+      "thickObLiquidity": true,
+      "noSellPressure": true,
       "twitter": "",
       "telegram": "",
       "discord": "",
       "website": "",
-      "comment": ""
+      "comment": "Deployer is a profitable top PNL leaderboard known by the team, no more info"
     },
     {
       "name": "SIX",
@@ -182,7 +182,7 @@
       "telegram": "",
       "discord": "",
       "website": "",
-      "comment": ""
+      "comment": "Group of ruggers launching plenty tokens to dump them and using airdrop as hidden team allocation"
     },
     {
       "name": "WAGMI",
@@ -206,15 +206,15 @@
         "percentage": "16.50"
       },
       "markPx": "0.003606",
-      "devReputation": false,
-      "spreadLessThanThree": false,
-      "thickObLiquidity": false,
-      "noSellPressure": false,
-      "twitter": "",
+      "devReputation": true,
+      "spreadLessThanThree": true,
+      "thickObLiquidity": true,
+      "noSellPressure": true,
+      "twitter": "wagmi_hl",
       "telegram": "",
       "discord": "",
-      "website": "",
-      "comment": ""
+      "website": "https://t.co/tknVPFwhH4",
+      "comment": "Wagmi is planning to launch SPOT VAULT and has also merch to sell, Wagmi deployer is a profitable gambler and looks based"
     },
     {
       "name": "CAPPY",
@@ -238,11 +238,11 @@
       "spreadLessThanThree": false,
       "thickObLiquidity": false,
       "noSellPressure": false,
-      "twitter": "",
+      "twitter": "CAPYBARAonHL",
       "telegram": "",
       "discord": "",
       "website": "",
-      "comment": ""
+      "comment": "Just a scam high team alloc"
     },
     {
       "name": "POINTS",
@@ -266,15 +266,15 @@
         "percentage": "40.00"
       },
       "markPx": "0.029822",
-      "devReputation": false,
-      "spreadLessThanThree": false,
-      "thickObLiquidity": false,
-      "noSellPressure": false,
-      "twitter": "",
+      "devReputation": true,
+      "spreadLessThanThree": true,
+      "thickObLiquidity": true,
+      "noSellPressure": true,
+      "twitter": "points_hl",
       "telegram": "",
       "discord": "",
       "website": "",
-      "comment": ""
+      "comment": "Deployer has a great reputation either on twitter or discord and has no allocation other than airdrop as anyone else"
     },
     {
       "name": "TRUMP",
@@ -306,7 +306,7 @@
       "telegram": "",
       "discord": "",
       "website": "",
-      "comment": ""
+      "comment": "Group of ruggers launching plenty tokens to dump them and using airdrop as hidden team allocation"
     },
     {
       "name": "GMEOW",
@@ -327,14 +327,14 @@
       "airdrop2": null,
       "markPx": "0.00090361",
       "devReputation": false,
-      "spreadLessThanThree": false,
+      "spreadLessThanThree": true,
       "thickObLiquidity": false,
-      "noSellPressure": false,
+      "noSellPressure": true,
       "twitter": "",
       "telegram": "",
       "discord": "",
       "website": "",
-      "comment": ""
+      "comment": "No idea about the deployer, didnt sold his allocation yet (11/07), looks like a PURR bag holder"
     },
     {
       "name": "PEPE",
@@ -366,7 +366,7 @@
       "telegram": "",
       "discord": "",
       "website": "",
-      "comment": ""
+      "comment": "Group of ruggers launching plenty tokens to dump them and using airdrop as hidden team allocation"
     },
     {
       "name": "XULIAN",
@@ -390,15 +390,15 @@
         "percentage": "40.00"
       },
       "markPx": "0.00073018",
-      "devReputation": false,
-      "spreadLessThanThree": false,
+      "devReputation": true,
+      "spreadLessThanThree": true,
       "thickObLiquidity": false,
-      "noSellPressure": false,
-      "twitter": "",
+      "noSellPressure": true,
+      "twitter": "XULIAN_on_hl",
       "telegram": "",
       "discord": "",
       "website": "",
-      "comment": ""
+      "comment": "Deployer is a dedicated discord member #3 high yapping but great dev that likes trying original tokenomics"
     },
     {
       "name": "RUG",
@@ -422,15 +422,15 @@
         "percentage": "40.00"
       },
       "markPx": "0.041595",
-      "devReputation": false,
-      "spreadLessThanThree": false,
-      "thickObLiquidity": false,
-      "noSellPressure": false,
-      "twitter": "",
+      "devReputation": true,
+      "spreadLessThanThree": true,
+      "thickObLiquidity": true,
+      "noSellPressure": true,
+      "twitter": "RUG_on_HL",
       "telegram": "",
       "discord": "",
       "website": "",
-      "comment": ""
+      "comment": "Deployer is rich, he will not rug you"
     },
     {
       "name": "ILIENS",
@@ -454,15 +454,15 @@
         "percentage": "29.50"
       },
       "markPx": "0.00083554",
-      "devReputation": false,
-      "spreadLessThanThree": false,
+      "devReputation": true,
+      "spreadLessThanThree": true,
       "thickObLiquidity": false,
-      "noSellPressure": false,
-      "twitter": "",
+      "noSellPressure": true,
+      "twitter": "XULIAN_on_hl",
       "telegram": "",
       "discord": "",
       "website": "",
-      "comment": ""
+      "comment": "Deployer is a dedicated discord member #3 high yapping but great dev that likes trying original tokenomics"
     },
     {
       "name": "FUCKY",
@@ -490,7 +490,7 @@
       "telegram": "",
       "discord": "",
       "website": "",
-      "comment": ""
+      "comment": "Memecoin that fucked up, deployer isnt planning to sell he said and proved it so far (11/07), deployer has been seen on HFUN telegram no more infos"
     },
     {
       "name": "CZ",
@@ -514,15 +514,15 @@
         "percentage": "3.77"
       },
       "markPx": "0.33288",
-      "devReputation": false,
-      "spreadLessThanThree": false,
-      "thickObLiquidity": false,
-      "noSellPressure": false,
-      "twitter": "",
-      "telegram": "",
+      "devReputation": true,
+      "spreadLessThanThree": true,
+      "thickObLiquidity": true,
+      "noSellPressure": true,
+      "twitter": "CZonHL",
+      "telegram": "https://t.me/CZonHL",
       "discord": "",
-      "website": "",
-      "comment": ""
+      "website": "https://czre.lease/",
+      "comment": "Memecoin no utility planned, deployer is not a dev, he externalize the dev part, inside top points rank, not likely to sell but opened a vault that didnt ended well"
     },
     {
       "name": "BAGS",
@@ -554,7 +554,7 @@
       "telegram": "",
       "discord": "",
       "website": "",
-      "comment": ""
+      "comment": "Memecoin, unknown dev"
     },
     {
       "name": "ANSEM",
@@ -575,14 +575,14 @@
       "airdrop2": null,
       "markPx": "0.012404",
       "devReputation": false,
-      "spreadLessThanThree": false,
+      "spreadLessThanThree": true,
       "thickObLiquidity": false,
       "noSellPressure": false,
       "twitter": "",
       "telegram": "",
       "discord": "",
       "website": "",
-      "comment": ""
+      "comment": "Launched by anon fresh ID and wallet dev, maybe has already sold everything he owned, cant be sure"
     },
     {
       "name": "TATE",
@@ -610,7 +610,7 @@
       "telegram": "",
       "discord": "",
       "website": "",
-      "comment": ""
+      "comment": "Launched by anon fresh ID and wallet dev, maybe has already sold everything he owned, cant be sure"
     },
     {
       "name": "FUN",
@@ -634,15 +634,15 @@
         "percentage": "25.00"
       },
       "markPx": "0.38715",
-      "devReputation": false,
-      "spreadLessThanThree": false,
-      "thickObLiquidity": false,
-      "noSellPressure": false,
+      "devReputation": true,
+      "spreadLessThanThree": true,
+      "thickObLiquidity": true,
+      "noSellPressure": true,
       "twitter": "",
       "telegram": "",
       "discord": "",
       "website": "",
-      "comment": ""
+      "comment": "Wants to build the pump dot fun on HL, auction crowdfunding and possibly used for a HL casino too, deployer is not a dev, he externalize the dev part, inside top points rank, not likely to sell but opened a vault that didnt ended well"
     },
     {
       "name": "SUCKY",
@@ -662,15 +662,15 @@
       },
       "airdrop2": null,
       "markPx": "0.00051627",
-      "devReputation": false,
-      "spreadLessThanThree": false,
+      "devReputation": true,
+      "spreadLessThanThree": true,
       "thickObLiquidity": false,
-      "noSellPressure": false,
-      "twitter": "",
+      "noSellPressure": true,
+      "twitter": "suckyhl",
       "telegram": "",
-      "discord": "",
-      "website": "",
-      "comment": ""
+      "discord": "https://discord.com/invite/BjxDATSEMj",
+      "website": "https://suckyhl.com/",
+      "comment": "1% of the supply seems reasonably legit with no insider alloc, CTO made an OTC deal tool"
     },
     {
       "name": "BIGBEN",
@@ -694,15 +694,15 @@
         "percentage": "0.03"
       },
       "markPx": "0.00273",
-      "devReputation": false,
-      "spreadLessThanThree": false,
+      "devReputation": true,
+      "spreadLessThanThree": true,
       "thickObLiquidity": false,
-      "noSellPressure": false,
-      "twitter": "",
+      "noSellPressure": true,
+      "twitter": "XULIAN_on_hl",
       "telegram": "",
       "discord": "",
       "website": "",
-      "comment": ""
+      "comment": "Deployer is a dedicated discord member #3 high yapping but great dev that likes trying original tokenomics"
     },
     {
       "name": "KOBE",
@@ -726,15 +726,15 @@
         "percentage": "12.00"
       },
       "markPx": "0.00057344",
-      "devReputation": false,
-      "spreadLessThanThree": false,
+      "devReputation": true,
+      "spreadLessThanThree": true,
       "thickObLiquidity": false,
-      "noSellPressure": false,
-      "twitter": "",
+      "noSellPressure": true,
+      "twitter": "KHyperliquid",
       "telegram": "",
       "discord": "",
       "website": "",
-      "comment": ""
+      "comment": "Community taken over (CTO) token, led by Loracle that has built a telegram gambling bot"
     },
     {
       "name": "VEGAS",
@@ -758,15 +758,15 @@
         "percentage": "30.00"
       },
       "markPx": "0.26894",
-      "devReputation": false,
-      "spreadLessThanThree": false,
+      "devReputation": true,
+      "spreadLessThanThree": true,
       "thickObLiquidity": false,
-      "noSellPressure": false,
-      "twitter": "",
-      "telegram": "",
+      "noSellPressure": true,
+      "twitter": "Vegas_HL",
+      "telegram": "https://t.me/vegas_hl",
       "discord": "",
-      "website": "",
-      "comment": ""
+      "website": "https://vegas-hl.com/",
+      "comment": "Gamblefi token, deployer is a profitable gambler and looks based"
     },
     {
       "name": "PUMP",
@@ -783,14 +783,14 @@
       "airdrop2": null,
       "markPx": "0.0005014",
       "devReputation": false,
-      "spreadLessThanThree": false,
-      "thickObLiquidity": false,
-      "noSellPressure": false,
+      "spreadLessThanThree": true,
+      "thickObLiquidity": true,
+      "noSellPressure": true,
       "twitter": "",
       "telegram": "",
       "discord": "",
       "website": "",
-      "comment": ""
+      "comment": "Memecoin, no infos about the deployer, looks like sold his allocation already"
     },
     {
       "name": "SCHIZO",
@@ -810,15 +810,15 @@
       },
       "airdrop2": null,
       "markPx": "14.078",
-      "devReputation": false,
-      "spreadLessThanThree": false,
-      "thickObLiquidity": false,
-      "noSellPressure": false,
-      "twitter": "",
+      "devReputation": true,
+      "spreadLessThanThree": true,
+      "thickObLiquidity": true,
+      "noSellPressure": true,
+      "twitter": "schizo_on_hl",
       "telegram": "",
       "discord": "",
       "website": "",
-      "comment": ""
+      "comment": "Deployed by Loracle, no utility right now, dev who is current #1 rank in points, computer science major, belgian dad of 2 kids, chad developer that already made it but still making projects to not get bored"
     },
     {
       "name": "CATNIP",
@@ -838,15 +838,15 @@
       },
       "airdrop2": null,
       "markPx": "0.10052",
-      "devReputation": false,
-      "spreadLessThanThree": false,
+      "devReputation": true,
+      "spreadLessThanThree": true,
       "thickObLiquidity": false,
-      "noSellPressure": false,
-      "twitter": "",
-      "telegram": "",
+      "noSellPressure": true,
+      "twitter": "CatnipHL",
+      "telegram": "https://t.me/getcatnip",
       "discord": "",
       "website": "",
-      "comment": ""
+      "comment": "Deployers are two dedicated discord member #4 and 25 years of dev background, utility is planned but still TBA"
     },
     {
       "name": "HAPPY",
@@ -870,7 +870,7 @@
       "telegram": "",
       "discord": "",
       "website": "",
-      "comment": ""
+      "comment": "Dev appeared once, never came back"
     },
     {
       "name": "SELL",
@@ -902,7 +902,7 @@
       "telegram": "",
       "discord": "",
       "website": "",
-      "comment": ""
+      "comment": "Deployer keeps selling everything he gets/has, unknown dev"
     },
     {
       "name": "HBOOST",
@@ -926,7 +926,7 @@
       "telegram": "",
       "discord": "",
       "website": "",
-      "comment": ""
+      "comment": "Biggest stupid scam promising points strategy not working at all"
     },
     {
       "name": "FARMED",
@@ -954,11 +954,11 @@
       "spreadLessThanThree": false,
       "thickObLiquidity": false,
       "noSellPressure": false,
-      "twitter": "",
+      "twitter": "FarmedToken",
       "telegram": "",
       "discord": "",
       "website": "",
-      "comment": ""
+      "comment": "Decimal mistake at launch, begging anon devs, nuking charts devs"
     },
     {
       "name": "PURRPS",
@@ -990,7 +990,7 @@
       "telegram": "",
       "discord": "",
       "website": "",
-      "comment": ""
+      "comment": "Related to the biggest stupid scam promising points strategy not working at all"
     },
     {
       "name": "GUP",
@@ -1010,15 +1010,15 @@
       },
       "airdrop2": null,
       "markPx": "0.4403",
-      "devReputation": false,
+      "devReputation": true,
       "spreadLessThanThree": false,
       "thickObLiquidity": false,
-      "noSellPressure": false,
-      "twitter": "",
+      "noSellPressure": true,
+      "twitter": "gup_the_pug",
       "telegram": "",
       "discord": "",
       "website": "",
-      "comment": ""
+      "comment": "Just a meme, deployer is in crypto since 2017 and is a bit active on discord"
     },
     {
       "name": "GPT",
@@ -1046,7 +1046,7 @@
       "telegram": "",
       "discord": "",
       "website": "",
-      "comment": ""
+      "comment": "Just a scam high team alloc"
     },
     {
       "name": "PANDA",
@@ -1066,15 +1066,15 @@
       },
       "airdrop2": null,
       "markPx": "0.017434",
-      "devReputation": false,
-      "spreadLessThanThree": false,
-      "thickObLiquidity": false,
-      "noSellPressure": false,
-      "twitter": "",
+      "devReputation": true,
+      "spreadLessThanThree": true,
+      "thickObLiquidity": true,
+      "noSellPressure": true,
+      "twitter": "panda_on_HL",
       "telegram": "",
-      "discord": "",
+      "discord": "https://discord.gg/zRTx6d6T",
       "website": "",
-      "comment": ""
+      "comment": "Launched by Derteil, known HL KOL and his private group, project/utility TBA. Derteil and the participants of the presale are known HL OG members, if they sell more than 30% of their alloc they will be publicly ashamed"
     },
     {
       "name": "BID",
@@ -1098,11 +1098,11 @@
       "spreadLessThanThree": false,
       "thickObLiquidity": false,
       "noSellPressure": false,
-      "twitter": "",
+      "twitter": "bidbidcoin",
       "telegram": "",
       "discord": "",
       "website": "",
-      "comment": ""
+      "comment": "No more infos, dyor, deployer nuked the chart"
     },
     {
       "name": "HODL",
@@ -1126,7 +1126,7 @@
       "spreadLessThanThree": false,
       "thickObLiquidity": false,
       "noSellPressure": false,
-      "twitter": "",
+      "twitter": "HODLonHL",
       "telegram": "",
       "discord": "",
       "website": "",
@@ -1410,14 +1410,14 @@
       "airdrop2": null,
       "markPx": "0.059063",
       "devReputation": false,
-      "spreadLessThanThree": false,
+      "spreadLessThanThree": true,
       "thickObLiquidity": false,
-      "noSellPressure": false,
-      "twitter": "",
+      "noSellPressure": true,
+      "twitter": "mbenivini",
       "telegram": "",
       "discord": "",
       "website": "",
-      "comment": ""
+      "comment": "Website, telegram availabe, incubated from russian group active on HL top 1 referrals with 864 people \"cp0x\" ; message from the team \"For the trust, we guarantee that a) for the first six months we will put up a bid on the purchase of any number of tokens at the listing price (250k total cap), b) the team will have a lock on sale until the token makes x10 from the starting price/2.5mln total cap (this does not mean that we will pour everything into the orderbook at x10 - just the minimum mark for paying for salaries and listing expenses).\""
     },
     {
       "name": "MAGA",
