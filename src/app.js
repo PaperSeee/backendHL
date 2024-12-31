@@ -293,7 +293,7 @@ app.post('/api/update', async (req, res) => {
     }
 });
 
-// Exporter l'application avant d'établir la connexion
+// Exporter l'application avant d'établir la connexion de rami
 module.exports = app;
 
 // Modifier le démarrage du serveur
