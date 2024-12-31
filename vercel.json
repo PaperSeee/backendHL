@@ -8,8 +8,18 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/api/update",
       "dest": "src/app.js"
+    },
+    {
+      "src": "/(.)",
+      "dest": "src/app.js"
+    }
+  ],
+  "cron": [
+    {
+      "path": "/api/update",
+      "schedule": "/1 * * * *"
     }
   ]
 }

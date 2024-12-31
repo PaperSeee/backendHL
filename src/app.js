@@ -282,6 +282,17 @@ app.put('/api/tokens/:tokenIndex', async (req, res) => {
     }
 });
 
+app.post('/api/update', async (req, res) => {
+    try {
+        console.log('Scheduled update triggered');
+        await updateTokenData(); // Appelle votre logique de mise à jour
+        res.status(200).send('Update completed');
+    } catch (error) {
+        console.error('Error during scheduled update:', error);
+        res.status(500).send('Update failed');
+    }
+});
+
 // Exporter l'application avant d'établir la connexion
 module.exports = app;
 
