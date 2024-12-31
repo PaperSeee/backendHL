@@ -282,7 +282,7 @@ app.put('/api/tokens/:tokenIndex', async (req, res) => {
     }
 });
 
-app.post('/api/update', async (req, res) => {
+app.get('/api/update', async (req, res) => {
     try {
         console.log('Scheduled update triggered');
         await updateTokenData(); // Appelle votre logique de mise à jour
