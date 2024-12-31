@@ -12,14 +12,8 @@
       "dest": "src/app.js"
     },
     {
-      "src": "/(.)",
+      "src": "/(.*)",
       "dest": "src/app.js"
-    }
-  ],
-  "cron": [
-    {
-      "path": "/api/update",
-      "schedule": "/1 * * * *"
     }
   ]
 }
