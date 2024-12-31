@@ -5,6 +5,9 @@ const cron = require('node-cron');
 const fs = require('fs');
 const path = require('path');
 const pLimit = require('p-limit');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const cookieParser = require('cookie-parser');
 require('dotenv').config();
 const { MongoClient } = require('mongodb');
 
@@ -20,7 +23,8 @@ const config = {
     hyperliquidApiUrl: process.env.HYPERLIQUID_API_URL,
     hypurrscanApiUrl: process.env.HYPURRSCAN_API_URL,
     corsOrigin: process.env.CORS_ORIGIN,
-    pollingInterval: parseInt(process.env.POLLING_INTERVAL, 10) || 60000
+    pollingInterval: parseInt(process.env.POLLING_INTERVAL, 10) || 60000,
+    jwtSecret: process.env.JWT_SECRET || 'your_jwt_secret'
 };
 
 const limit = pLimit(5);
@@ -149,13 +153,14 @@ async function updateTokenData() {
 const app = express();
 app.use(cors({ origin: config.corsOrigin }));
 app.use(express.json());
+app.use(cookieParser());
 
 const dataDir = path.join(__dirname, 'data');
 if (!fs.existsSync(dataDir)) {
     fs.mkdirSync(dataDir);
 }
 
-// Créer une fonction pour initialiser la connexion à la base de données
+// Créer une fonction pour initialiser la connexion à la base de donnéesa
 async function initializeDatabase() {
     try {
         await client.connect();
@@ -183,7 +188,47 @@ const checkDatabaseConnection = async (req, res, next) => {
     next();
 };
 
+// Middleware pour vérifier l'authentification de l'utilisateur admin
+const authenticateAdmin = (req, res, next) => {
+    const token = req.cookies.token;
+    if (!token) {
+        return res.status(401).json({ error: 'Unauthorized' });
+    }
+
+    try {
+        const decoded = jwt.verify(token, config.jwtSecret);
+        if (decoded.username !== 'admin') {
+            return res.status(401).json({ error: 'Unauthorized' });
+        }
+        next();
+    } catch (error) {
+        return res.status(401).json({ error: 'Unauthorized' });
+    }
+};
+
 app.use(checkDatabaseConnection);
+
+app.post('/api/login', async (req, res) => {
+    const { username, password } = req.body;
+
+    try {
+        const user = await db.collection('users').findOne({ username });
+        if (!user) {
+            return res.status(401).json({ error: 'Invalid credentials' });
+        }
+
+        const isPasswordValid = await bcrypt.compare(password, user.password);
+        if (!isPasswordValid) {
+            return res.status(401).json({ error: 'Invalid credentials' });
+        }
+
+        const token = jwt.sign({ username: user.username }, config.jwtSecret, { expiresIn: '1h' });
+        res.cookie('token', token, { httpOnly: true });
+        res.json({ message: 'Login successful' });
+    } catch (error) {
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
 
 app.get('/api/tokens', async (req, res) => {
     try {
@@ -220,7 +265,7 @@ app.get('/api/tokens', async (req, res) => {
     }
 });
 
-app.put('/api/tokens/:tokenIndex', async (req, res) => {
+app.put('/api/tokens/:tokenIndex', authenticateAdmin, async (req, res) => {
     try {
         const tokenIndex = parseInt(req.params.tokenIndex, 10);
 
@@ -282,7 +327,7 @@ app.put('/api/tokens/:tokenIndex', async (req, res) => {
     }
 });
 
-app.get('/api/update', async (req, res) => {
+app.post('/api/update', async (req, res) => {
     try {
         console.log('Scheduled update triggered');
         await updateTokenData(); // Appelle votre logique de mise à jour
