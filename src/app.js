@@ -335,7 +335,7 @@ app.put('/api/tokens/:tokenIndex', authenticateAdmin, async (req, res) => {
 app.post('/api/update', async (req, res) => {
     try {
         console.log('Scheduled update triggered');
-        await updateTokenData(); // Appellee votre logique de mise à jourRRRR
+        await updateTokenData(); // Appellee votre logique de mise à jourRRRaR
         res.status(200).send('Update completed');
     } catch (error) {
         console.error('Error during scheduled update:', error);
