@@ -151,7 +151,10 @@ async function updateTokenData() {
 }
 
 const app = express();
-app.use(cors({ origin: config.corsOrigin }));
+app.use(cors({ 
+    origin: config.corsOrigin,
+    credentials: true 
+}));
 app.use(express.json());
 app.use(cookieParser());
 
@@ -266,6 +269,7 @@ app.get('/api/tokens', async (req, res) => {
 });
 
 app.put('/api/tokens/:tokenIndex', authenticateAdmin, async (req, res) => {
+    // Your existing code here
     try {
         const tokenIndex = parseInt(req.params.tokenIndex, 10);
 
@@ -325,6 +329,7 @@ app.put('/api/tokens/:tokenIndex', authenticateAdmin, async (req, res) => {
             details: error.message
         });
     }
+    // ...existing code...
 });
 
 app.post('/api/update', async (req, res) => {
@@ -336,6 +341,15 @@ app.post('/api/update', async (req, res) => {
         console.error('Error during scheduled update:', error);
         res.status(500).send('Update failed');
     }
+});
+
+app.get('/api/check-auth', authenticateAdmin, (req, res) => {
+    res.json({ authenticated: true });
+});
+
+app.post('/api/logout', (req, res) => {
+    res.clearCookie('token');
+    res.json({ message: 'Logged out successfully' });
 });
 
 // Exporter l'application avant d'établir la connexion de rami
