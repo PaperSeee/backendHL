@@ -352,7 +352,7 @@ app.post('/api/logout', (req, res) => {
     res.json({ message: 'Logged out successfully' });
 });
 
-// Exporter l'application avant d'établir la connexion de rami
+// Exporter l'application avant d'établir la connexion de ramia
 module.exports = app;
 
 // Modifier le démarrage du serveur
